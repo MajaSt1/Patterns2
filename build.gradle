@@ -26,6 +26,7 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter')
-    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.0.4.RELEASE'
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile group: 'net.java.dev.inflector', name: 'inflector', version: '0.7.0'
 }
