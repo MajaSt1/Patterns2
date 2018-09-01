@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component;
 public class OrderWatcher {
     private static final Logger LOGGER= LoggerFactory.getLogger(OrderWatcher.class);
 
-    @After(value ="execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" +
-            " && args(userId) && target(order)")
+    @Before(value ="execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" +
+            " && args(order,userId)")
     public void watchOrder(OrderDto order, Long userId){
         LOGGER.info("Order method run " +order.getClass().getName()+ "with userId "+ userId);
     }
